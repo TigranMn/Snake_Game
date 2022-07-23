@@ -1,6 +1,8 @@
 import { onSnake, snakeBody } from "./snake.js";
 import { myReq } from "./main.js";
 import { onWall } from "./wall.js";
+import { resetAll, startGame } from "./flow.js";
+import { GAME_BOARD } from "./constants.js";
 export let noBorderMode = true
 export let level = 0
 export let difficulty = 0
@@ -39,34 +41,43 @@ toggle.addEventListener('click',function() {
       toggle.innerText = 'No border mode'
    }
 })
+
+//Try again button after losing ↓
+document.querySelector('.tryAgain').addEventListener('click',tryAgain)
+function tryAgain() {
+   document.querySelector('.losingMenu').style.display = 'none'
+         resetAll()
+         startGame()
+}
+//Main menu buttons ↓
+
+let mainMenu = document.querySelectorAll('.mainMenu')
+mainMenu.forEach(el => {
+   el.addEventListener('click',goToMenu)
+})
+function goToMenu() {
+   document.querySelector('.pauseMenu').style.display = 'none'
+   document.querySelector('.losingMenu').style.display = 'none'
+   GAME_BOARD.style.display = 'none'
+   document.querySelector('.menu').style.display = 'flex'
+   resetAll()
+}
 function noBorder() {
    // Checking snakes intersection with wall or itself 
    if(onSnake(snakeBody[0],true) || onWall(snakeBody[0])) {
-      let restart = confirm('Would you like to start again?')
-      if(restart) {
-         cancelAnimationFrame(myReq)
-         window.location = 'index.html'
-      }
-      else {
-         cancelAnimationFrame(myReq)
-      }
+      cancelAnimationFrame(myReq)
+      document.querySelector('.losingMenu').style.display = 'flex'
    }
   
    }
    export function outsideBox() {
-      return snakeBody[0].x > 21 || snakeBody[0].x < 1 || snakeBody[0].y > 32 || snakeBody[0].y < 1
+      return snakeBody[0].x > 21 || snakeBody[0].x < 1 || snakeBody[0].y > 21 || snakeBody[0].y < 1
    }
 
    function border() {
       if(outsideBox() || onSnake(snakeBody[0],true) || onWall(snakeBody[0])) {
-         let a = confirm('Would you like to start again')
-         if(a) {
-            cancelAnimationFrame(myReq)
-            window.location = 'index.html'
-         }
-         else {
-            cancelAnimationFrame(myReq)
-         }
+         cancelAnimationFrame(myReq)
+         document.querySelector('.losingMenu').style.display = 'flex'
       }
       }
      export function gameMode() {

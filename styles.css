@@ -5,20 +5,70 @@ body{
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
+   background-color: #031310;
+   position: relative;
 }
 .gameboard {
    display: none;
-   height: 100vmin;
-   width: 100vmin;
-   background-color: #03C03C;
+   height: 99vmin;
+   width: 99vmin;
+   background-color: #031319;
    margin: 0 auto;
    grid-template-columns:repeat(21, 1fr);
    grid-template-rows:repeat(21, 1fr);
+   position: relative   ;
+   border: 2px solid #2196f3 ;
+   box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3;
 }
+.losingMenu {
+   position: absolute;
+   top: 10%;
+   bottom: 10%;
+   left: 30%;
+   right: 30%;
+   display: none;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   background-color: #031321;
+   z-index: 5;
+}
+.losingMenu span:nth-child(1) {
+   margin-bottom: 20px;
+   color: #2196f3;
+   letter-spacing: 4px;
+   font-size: 36px;
+   margin-top: 40px;
+}
+.losingMenu span:nth-child(2) {
+   margin-bottom: 80px;
+   color: #2196f3;
+   letter-spacing: 4px;
+   font-size: 36px;
+}
+.losingMenu > div {
+   margin-bottom: 20px;
+   
+}
+.pauseMenu {
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      left: 30%;
+      right: 30%;
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #031321;
+      z-index: 5;
+   }
+
 .snake {
-   background-color: #FFB74D;
+   background-color: #2196f3;
    border: .25vmin solid black;
    border-radius: 40%;
+   box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3;
 }
 .food {
    background-image: url('imgs/apple.png');

@@ -6,9 +6,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./styles.css">
    <title>Snake</title>
-   <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
-      </style>
 </head>
 <body>
    <div class="menu">
@@ -23,18 +20,30 @@
          No border mode
       </div>
       <select onfocus="this.size = 3" onblur='this.size=1;' onchange='this.size=1; this.blur();' class="menuItem level">
-         <option value="0">Level 0</option>
-         <option value="1">Level 1</option>
-         <option value="2">Level 2</option>
-         <option value="3">Level 3</option>
-         <option value="4">Level 4</option>
+         <option value="0">Level 1</option>
+         <option value="1">Level 2</option>
+         <option value="2">Level 3</option>
+         <option value="3">Level 4</option>
+         <option value="4">Level 5</option>
       </select>
       <div class="menuItem difficulty">
          Easy
       </div>
       
    </div>
-   <div class="gameboard"></div>
+   <div class="losingMenu">
+      <span>You lose</span>
+      <span class="score">Score</span>
+      <div class="menuItem tryAgain">Try again</div>
+      <div class="menuItem mainMenu">Main menu</div>
+   </div>
+   <div class="pauseMenu">
+         <div class="menuItem resume">Resume</div>
+         <div class="menuItem mainMenu">Main menu</div>
+   </div>
+   <div class="gameboard">
+   </div>
+   
    <script src="script/main.js" type="module"></script>
 </body>
 </html>
