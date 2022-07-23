@@ -5,35 +5,40 @@ export let noBorderMode = true
 export let level = 0
 export let difficulty = 0
 
-// let difficultyBtn = document.querySelector('.difficulty')
-// difficultyBtn.addEventListener('click', changeDifficulty)
+let difficultyBtn = document.querySelector('.difficulty')
+difficultyBtn.addEventListener('click', changeDifficulty)
 
-// function changeDifficulty() {
-//    if(difficultyBtn.innerHTML === 'Easy') {
-//       difficultyBtn.innerHTML = 'Medium'
-//       difficulty = 1
-//    }
-//    else if(difficultyBtn.innerHTML === 'Medium') {
-//       difficultyBtn.innerHTML = 'Hard'
-//       difficulty = 2
-//    }
-//    else if(difficultyBtn.innerHTML === 'Hard') {
-//       difficultyBtn.innerHTML = 'Easy'
-//       difficulty = 0
-//    }
-// }
+function changeDifficulty() {
+   if(difficultyBtn.innerText === 'Easy') {
+      difficultyBtn.innerText = 'Medium'
+      difficulty = 1
+   }
+   else if(difficultyBtn.innerText === 'Medium') {
+      difficultyBtn.innerText = 'Hard'
+      difficulty = 2
+   }
+   else if(difficultyBtn.innerText === 'Hard') {
+      difficultyBtn.innerText = 'Easy'
+      difficulty = 0
+   }
+}
 
-// let lvlBtn = document.querySelector('.level')
-// lvlBtn.addEventListener('change',getLevel)
-// function getLevel() {
-//    level = lvlBtn.value
-//    console.log(level)
-// }
-// let toggle = document.querySelector('.toggleGameMode')
-// toggle.addEventListener('click',function() {
-//    noBorderMode ? noBorderMode = false : noBorderMode = true
-//    console.log(noBorderMode)
-// })
+let lvlBtn = document.querySelector('.level')
+lvlBtn.addEventListener('change',getLevel)
+function getLevel() {
+   level = lvlBtn.value
+}
+let toggle = document.querySelector('.gameMode')
+toggle.addEventListener('click',function() {
+   if(toggle.innerText === 'No border mode') {
+      noBorderMode = false
+      toggle.innerText = 'Border mode'
+   }
+   else if(toggle.innerText === 'Border mode') {
+      noBorderMode = true
+      toggle.innerText = 'No border mode'
+   }
+})
 function noBorder() {
    // Checking snakes intersection with wall or itself 
    if(onSnake(snakeBody[0],true) || onWall(snakeBody[0])) {

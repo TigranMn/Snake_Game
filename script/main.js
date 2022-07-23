@@ -30,4 +30,4 @@ function draw() {
    drawWall()
 }
 
-window.requestAnimationFrame(main)
+// window.requestAnimationFrame(main)

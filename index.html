@@ -11,20 +11,29 @@
       </style>
 </head>
 <body>
-   <div class="options">
-      <div class="controls">Controls</div>
-      <button class="toggleGameMode" type="button">Toggle game mode</button>
-      <select class="level" >
-         <option value="0">Level 1</option>
-         <option value="1">Level 2</option>
-         <option value="2">Level 3</option>
-      </select>
-      <button class="difficulty" type="button">Easy</button>
-         <span class="kbdspan l">Move up <kbd>&uparrow;</kbd> </span>
-         <span class="kbdspan r">Move down <kbd>&downarrow;</kbd></span>
-         <span class="kbdspan l">Move left <kbd>&leftarrow;</kbd></span>
-         <span class="kbdspan r">Move right <kbd>&rightarrow;</kbd></span>
+   <div class="menu">
+      <div class="start menuItem">
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         Start
       </div>
+      <div class="menuItem gameMode">
+         No border mode
+      </div>
+      <select onfocus="this.size = 3" onblur='this.size=1;' onchange='this.size=1; this.blur();' class="menuItem level">
+         <option value="0">Level 0</option>
+         <option value="1">Level 1</option>
+         <option value="2">Level 2</option>
+         <option value="3">Level 3</option>
+         <option value="4">Level 4</option>
+      </select>
+      <div class="menuItem difficulty">
+         Easy
+      </div>
+      
+   </div>
    <div class="gameboard"></div>
    <script src="script/main.js" type="module"></script>
 </body>

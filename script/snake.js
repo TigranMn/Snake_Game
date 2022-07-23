@@ -28,9 +28,9 @@ export function updateSnake() {
       snakeBody[0].x = 1
    }
    if(snakeBody[0].y < 1) {
-      snakeBody[0].y = 32
+      snakeBody[0].y = 21
    }
-   else if(snakeBody[0].y > 32) {
+   else if(snakeBody[0].y > 21) {
       snakeBody[0].y = 1
    }
   }
