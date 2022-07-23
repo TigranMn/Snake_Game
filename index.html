@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./styles.css">
+   <title>Snake</title>
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+      </style>
+</head>
+<body>
+   <div class="options">
+      <div class="controls">Controls</div>
+      <button class="toggleGameMode" type="button">Toggle game mode</button>
+      <select class="level" >
+         <option value="0">Level 1</option>
+         <option value="1">Level 2</option>
+         <option value="2">Level 3</option>
+      </select>
+      <button class="difficulty" type="button">Easy</button>
+         <span class="kbdspan l">Move up <kbd>&uparrow;</kbd> </span>
+         <span class="kbdspan r">Move down <kbd>&downarrow;</kbd></span>
+         <span class="kbdspan l">Move left <kbd>&leftarrow;</kbd></span>
+         <span class="kbdspan r">Move right <kbd>&rightarrow;</kbd></span>
+      </div>
+   <div class="gameboard"></div>
+   <script src="script/main.js" type="module"></script>
+</body>
+</html>

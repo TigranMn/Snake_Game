@@ -1,0 +1,65 @@
+body{
+   margin: 0;
+   min-height: 100vh;
+   min-width: 100vw;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+.options {
+   padding: 5px 25px;
+   box-sizing: border-box;
+   width: 100%;
+   background-color: pink;
+   overflow: hidden;
+   font-size: 20px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+.controls {
+   width: 100%;
+   font-size: 26px;
+   font-family: "Roboto Condensed",sans-serif;
+   text-align: center;
+}
+.kbdspan {
+   font-family: 'Roboto Condensed', sans-serif;
+   width: 40%;
+   margin-bottom: 5px;
+   
+}
+.r {
+   text-align: right;
+}
+kbd {
+   padding: 0px 9px;
+   box-sizing: border-box;
+   border: 1px solid gray;
+   background-color: gray;
+   color: white;
+}
+.gameboard {
+   display: grid;
+   height: 80vmin;
+   width: 150vmin;
+   background-color: #03C03C;
+   margin: 0 auto;
+   grid-template-columns:repeat(32, 1fr);
+   grid-template-rows:repeat(21, 1fr);
+}
+.snake {
+   background-color: #FFB74D;
+   border: .25vmin solid black;
+   border-radius: 40%;
+}
+.food {
+   background-image: url('imgs/apple.png');
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+.wall {
+   background-image: url('imgs/obstacle.png');
+   background-size: cover;
+   background-repeat: no-repeat;
+}
