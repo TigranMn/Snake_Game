@@ -1,5 +1,7 @@
 export let inputDirection = {x:0,y:0}
 export let lastInputDirection = {x:0,y:0}
+
+// Controling snakes movement ↓
 window.addEventListener('keydown', e => {
    switch (e.key) {
       case 'ArrowUp': 

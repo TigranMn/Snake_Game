@@ -7,6 +7,7 @@ export let noBorderMode = true
 export let level = 0
 export let difficulty = 0
 
+// Choose difficulty in menu ↓
 let difficultyBtn = document.querySelector('.difficulty')
 difficultyBtn.addEventListener('click', changeDifficulty)
 
@@ -25,11 +26,14 @@ function changeDifficulty() {
    }
 }
 
+// Choosing level in menu ↓
 let lvlBtn = document.querySelector('.level')
 lvlBtn.addEventListener('change',getLevel)
 function getLevel() {
    level = lvlBtn.value
 }
+
+// Changing game mode in menu ↓
 let toggle = document.querySelector('.gameMode')
 toggle.addEventListener('click',function() {
    if(toggle.innerText === 'No border mode') {
@@ -49,12 +53,13 @@ function tryAgain() {
          resetAll()
          startGame()
 }
-//Main menu buttons ↓
+//Main menu buttons event handlers ↓
 
 let mainMenu = document.querySelectorAll('.mainMenu')
 mainMenu.forEach(el => {
    el.addEventListener('click',goToMenu)
 })
+
 function goToMenu() {
    document.querySelector('.pauseMenu').style.display = 'none'
    document.querySelector('.losingMenu').style.display = 'none'

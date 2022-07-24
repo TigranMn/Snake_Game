@@ -48,8 +48,8 @@ export function drawSnake() {
      GAME_BOARD.appendChild(segment)
    })
 }
-export function onSnake(position, ignoreHead = false) {
 
+export function onSnake(position, ignoreHead = false) {
   // ignoreHead stands for ignoring snake's head when checking if it intersects with it's body
     if(!ignoreHead) {
    return snakeBody.some(el => {
