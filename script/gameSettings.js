@@ -1,12 +1,14 @@
 import { onSnake, snakeBody } from "./snake.js";
 import { myReq } from "./main.js";
 import { onWall } from "./wall.js";
-import { resetAll, startGame } from "./flow.js";
-import { GAME_BOARD } from "./constants.js";
+import { addScoreToStorage,  resetAll, startGame } from "./flow.js";
+import { GAME_BOARD, HIGH_SCORE, LOSING_MENU, MENU, PAUSE_MENU, SCORE } from "./constants.js";
 export let noBorderMode = true
 export let level = 0
 export let difficulty = 0
-
+let gameOverSound = new Audio('sounds/gameOver.wav')
+let clickSound = new Audio('sounds/menuClick.wav')
+let hoverSound = new Audio('sounds/menuHover.wav')
 // Choose difficulty in menu ↓
 let difficultyBtn = document.querySelector('.difficulty')
 difficultyBtn.addEventListener('click', changeDifficulty)
@@ -49,7 +51,7 @@ toggle.addEventListener('click',function() {
 //Try again button after losing ↓
 document.querySelector('.tryAgain').addEventListener('click',tryAgain)
 function tryAgain() {
-   document.querySelector('.losingMenu').style.display = 'none'
+   LOSING_MENU.style.display = 'none'
          resetAll()
          startGame()
 }
@@ -61,17 +63,22 @@ mainMenu.forEach(el => {
 })
 
 function goToMenu() {
-   document.querySelector('.pauseMenu').style.display = 'none'
-   document.querySelector('.losingMenu').style.display = 'none'
+   SCORE.style.display = 'none'
+   HIGH_SCORE.style.display = 'none'
+   PAUSE_MENU.style.display = 'none'
+   LOSING_MENU.style.display = 'none'
    GAME_BOARD.style.display = 'none'
-   document.querySelector('.menu').style.display = 'flex'
+   MENU.style.display = 'flex'
    resetAll()
 }
 function noBorder() {
    // Checking snakes intersection with wall or itself 
    if(onSnake(snakeBody[0],true) || onWall(snakeBody[0])) {
+      gameOverSound.play()
       cancelAnimationFrame(myReq)
-      document.querySelector('.losingMenu').style.display = 'flex'
+      addScoreToStorage()
+      LOSING_MENU.style.display = 'flex'
+      document.querySelector('.losingScore').innerText = 'Score: ' + document.querySelector('#score').innerText
    }
   
    }
@@ -81,11 +88,30 @@ function noBorder() {
 
    function border() {
       if(outsideBox() || onSnake(snakeBody[0],true) || onWall(snakeBody[0])) {
+         gameOverSound.play()
          cancelAnimationFrame(myReq)
-         document.querySelector('.losingMenu').style.display = 'flex'
+         addScoreToStorage()
+         LOSING_MENU.style.display = 'flex'
+         document.querySelector('.losingScore').innerText +=  document.querySelector('#score').innerText
       }
       }
      export function gameMode() {
-      //checking death based on game mode
+      // Checking death based on game mode
       noBorderMode ? noBorder() : border()
+     }
+
+     // Menu sounds
+     let menuItems = document.querySelectorAll('.menuItem')
+     menuItems.forEach(el => {
+        el.addEventListener('click',function() { playSound(clickSound)})
+     })
+     
+     menuItems.forEach(el => {
+      el.addEventListener('mouseover',function() { playSound(hoverSound)})
+     })
+
+     export function playSound(sound) {
+      sound.currentTime = 0
+      let play = sound.play.bind(sound)
+      play()
      }

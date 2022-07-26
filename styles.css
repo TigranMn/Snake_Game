@@ -1,3 +1,10 @@
+@font-face {
+   font-family: 'pixel';
+   src: url('font/ARCADECLASSIC.TTF') format('truetype');
+}
+* {
+   font-family: pixel;
+}
 body{
    margin: 0;
    min-height: 100vh;
@@ -19,6 +26,40 @@ body{
    position: relative   ;
    border: 2px solid #2196f3 ;
    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3;
+}
+.highscore {
+   color: #031321;
+   width: 170px;
+   height: 60px;
+   left: 10%;
+   top: 5%;
+   position: absolute;
+   flex-direction: column;
+   align-items: center;
+   font-size: 24px;
+   border: 1px solid #2196f3;
+   justify-content: center;
+   box-shadow: 0 0 10px #2196f3,0 0 20px #2196f3,0 0 30px #2196f3, 0 0 40px #2196f3;
+   background-color: #2196f3;
+   letter-spacing: 4px;
+   display: none;
+}
+.score {
+   color: #031321;
+   width: 170px;
+   height: 60px;
+   right: 10%;
+   top: 5%;
+   position: absolute;
+   flex-direction: column;
+   align-items: center;
+   font-size: 24px;
+   border: 1px solid #2196f3;
+   justify-content: center;
+   box-shadow: 0 0 10px #2196f3,0 0 20px #2196f3,0 0 30px #2196f3, 0 0 40px #2196f3;
+   background-color: #2196f3;
+   letter-spacing: 4px;
+   display: none;
 }
 .losingMenu {
    position: absolute;
