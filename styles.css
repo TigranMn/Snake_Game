@@ -224,7 +224,12 @@ select:focus {
    outline: none;
 }
 select::-webkit-scrollbar {display:none;}
-
+@media screen and (max-width: 137px) {
+   .menuItem {
+      font-size: 5px;
+   }
+   
+}
 @media screen and (max-width: 982px) {
    .score {
       right: 5px;
@@ -260,5 +265,17 @@ select::-webkit-scrollbar {display:none;}
  @media screen and (max-width: 840px) {
    .highscore > span {
       letter-spacing: 0px;
+   }
+ }
+ @media screen and (max-width: 642px) {
+   .pauseMenu {
+      left: 20%;
+      right: 20%;
+   }
+ }
+
+ @media screen and (max-width: 422px) {
+   .pauseMenu {
+      bottom: 50%;
    }
  }
