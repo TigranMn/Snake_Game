@@ -4,6 +4,7 @@
 }
 * {
    font-family: pixel;
+   font-size: 5vmin;
 }
 body{
    margin: 0;
@@ -36,13 +37,18 @@ body{
    position: absolute;
    flex-direction: column;
    align-items: center;
-   font-size: 24px;
    border: 1px solid #2196f3;
    justify-content: center;
    box-shadow: 0 0 10px #2196f3,0 0 20px #2196f3,0 0 30px #2196f3, 0 0 40px #2196f3;
    background-color: #2196f3;
    letter-spacing: 4px;
    display: none;
+}
+.highscore > span {
+   font-size: 3vmin;
+}
+.score > span {
+   font-size: 3vmin;
 }
 .score {
    color: #031321;
@@ -53,7 +59,6 @@ body{
    position: absolute;
    flex-direction: column;
    align-items: center;
-   font-size: 24px;
    border: 1px solid #2196f3;
    justify-content: center;
    box-shadow: 0 0 10px #2196f3,0 0 20px #2196f3,0 0 30px #2196f3, 0 0 40px #2196f3;
@@ -78,14 +83,12 @@ body{
    margin-bottom: 20px;
    color: #2196f3;
    letter-spacing: 4px;
-   font-size: 36px;
    margin-top: 40px;
 }
 .losingMenu span:nth-child(2) {
    margin-bottom: 80px;
    color: #2196f3;
    letter-spacing: 4px;
-   font-size: 36px;
 }
 .losingMenu > div {
    margin-bottom: 20px;
@@ -107,7 +110,6 @@ body{
 
 .snake {
    background-color: #2196f3;
-   border: .25vmin solid black;
    border-radius: 40%;
    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3;
 }
@@ -118,7 +120,7 @@ body{
 }
 .wall {
    background-image: url('imgs/obstacle.png');
-   background-size: cover;
+   background-size: contain;
    background-repeat: no-repeat;
 }
 
@@ -142,7 +144,6 @@ body{
    justify-content: center;
    align-items: center;
    text-align: center;
-   font-size: 36px;
 }
 .menuItem:hover {
    color:#255784;
@@ -223,3 +224,41 @@ select:focus {
    outline: none;
 }
 select::-webkit-scrollbar {display:none;}
+
+@media screen and (max-width: 982px) {
+   .score {
+      right: 5px;
+   }
+   .highscore {
+      left: 5px;
+   }
+ }
+
+ @media screen and (max-width: 836px) {
+   .score {
+      width: 80px;
+      height: 40px;
+   }
+   .highscore {
+      width: 80px;
+      height: 40px;
+   }
+ }
+
+ @media screen and (max-height: 330px) {
+   .losingMenu > div {
+      font-size: 10px;
+   }
+   .highscore > span {
+      font-size: 7vmin;
+   }
+   .score > span {
+      font-size: 7vmin;
+   }
+ }
+
+ @media screen and (max-width: 840px) {
+   .highscore > span {
+      letter-spacing: 0px;
+   }
+ }

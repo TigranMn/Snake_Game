@@ -1,4 +1,4 @@
-import { GAME_BOARD } from "./constants.js"
+
 
 export let inputDirection = {x:0,y:0}
 export let lastInputDirection = {x:0,y:0}

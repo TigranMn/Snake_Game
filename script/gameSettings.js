@@ -92,7 +92,7 @@ function noBorder() {
          cancelAnimationFrame(myReq)
          addScoreToStorage()
          LOSING_MENU.style.display = 'flex'
-         document.querySelector('.losingScore').innerText +=  document.querySelector('#score').innerText
+         document.querySelector('.losingScore').innerText = 'Score: ' + document.querySelector('#score').innerText
       }
       }
      export function gameMode() {

@@ -4,8 +4,8 @@ import { getInputDirection } from './input.js'
 import { noBorderMode } from "./gameSettings.js";
 
 export let snakeBody = [{
-  x: 11,
-  y: 12
+  x: 1,
+  y: 1
 }]
 export function updateSnake() {
   let inputDirection = getInputDirection()
