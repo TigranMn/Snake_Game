@@ -144,6 +144,7 @@ body{
    justify-content: center;
    align-items: center;
    text-align: center;
+   cursor: default;
 }
 .menuItem:hover {
    color:#255784;

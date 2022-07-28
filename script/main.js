@@ -8,7 +8,7 @@ export let myReq
 
 let lastRenderTime = 0
 export function main(currentTime) {
- myReq =    requestAnimationFrame(main) 
+ myReq = requestAnimationFrame(main) 
 const secondsSinceLastRender = (currentTime - lastRenderTime)/ 1000
 
 // if FPS is greater than we want, dont run the code below

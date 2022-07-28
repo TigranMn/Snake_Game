@@ -51,14 +51,14 @@ export function drawSnake() {
 
 export function onSnake(position, ignoreHead = false) {
   // ignoreHead stands for ignoring snake's head when checking if it intersects with it's body
-    if(!ignoreHead) {
+    if(ignoreHead) {
    return snakeBody.some(el => {
-     return (el.x === position.x && el.y === position.y)
+     return (el.x === position.x && el.y === position.y && el !== snakeBody[0])
      })
     }
     else {
       return snakeBody.some(el => {
-        return (el.x === position.x && el.y === position.y && el !== snakeBody[0])
+        return (el.x === position.x && el.y === position.y )
         })
     }
 }

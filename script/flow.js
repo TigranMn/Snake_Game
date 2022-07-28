@@ -48,7 +48,7 @@ function pauseGame() {
    cancelAnimationFrame(myReq)
    PAUSE_MENU.style.display = 'flex'
 }
-
+// Adding new highscore to local storage
 export function addScoreToStorage() {
    let thisScore = document.querySelector('#score').innerText
    let highscore = getHighScore()
