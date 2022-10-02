@@ -52,8 +52,8 @@ toggle.addEventListener('click',function() {
 document.querySelector('.tryAgain').addEventListener('click',tryAgain)
 function tryAgain() {
    LOSING_MENU.style.display = 'none'
-         resetAll()
-         startGame()
+   resetAll()
+   startGame()
 }
 //Main menu buttons event handlers ↓
 
@@ -71,6 +71,11 @@ function goToMenu() {
    MENU.style.display = 'flex'
    resetAll()
 }
+
+export function outsideBox() {
+   return snakeBody[0].x > 21 || snakeBody[0].x < 1 || snakeBody[0].y > 21 || snakeBody[0].y < 1
+}
+
 function noBorder() {
    // Checking snakes intersection with wall or itself 
    if(onSnake(snakeBody[0],true) || onWall(snakeBody[0])) {
@@ -80,11 +85,7 @@ function noBorder() {
       LOSING_MENU.style.display = 'flex'
       document.querySelector('.losingScore').innerText = 'Score: ' + document.querySelector('#score').innerText
    }
-  
-   }
-   export function outsideBox() {
-      return snakeBody[0].x > 21 || snakeBody[0].x < 1 || snakeBody[0].y > 21 || snakeBody[0].y < 1
-   }
+  }
 
    function border() {
       if(outsideBox() || onSnake(snakeBody[0],true) || onWall(snakeBody[0])) {

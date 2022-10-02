@@ -16,6 +16,7 @@ let eatingAudio = new Audio('sounds/eating.mp3')
       foodPos=getRandomFoodPos()
    let scoreBox = document.querySelector('#score')
    let currScore = scoreBox.innerText
+   // Increasing score based on difficulty level
    scoreBox.innerText = +currScore + (SNAKE_SPEED[difficulty]/5)
    }
 }

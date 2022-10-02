@@ -44,6 +44,7 @@ window.addEventListener('keydown',key => {
 })
 
 document.querySelector('.resume').addEventListener('click',startGame)
+
 function pauseGame() {
    cancelAnimationFrame(myReq)
    PAUSE_MENU.style.display = 'flex'
